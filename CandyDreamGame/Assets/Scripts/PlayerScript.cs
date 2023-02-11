@@ -12,10 +12,31 @@ public class PlayerScript : MonoBehaviour
     public float x;
     public float sensitivity;
 
+    public float jumpHeight;
+    public Vector3 jump;
+    public bool onGround;
+    public Rigidbody rb;
+
+
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        rb = GetComponent<Rigidbody>();
+        jump = new Vector3(0, jumpHeight, 0);
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        onGround = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        onGround = false;
+    }
+
+
+
 
     void Update()
     {
@@ -29,5 +50,13 @@ public class PlayerScript : MonoBehaviour
 
         transform.Translate(move * Time.deltaTime * speed);
         transform.Rotate(cameraDraaien * Time.deltaTime * sensitivity);
+
+        if (Input.GetKeyDown(KeyCode.Space) && onGround)
+        {
+            rb.AddForce(jump * jumpHeight, ForceMode.Impulse);
+            onGround = false;
+        }
+
+
     }
 }
