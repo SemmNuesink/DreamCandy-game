@@ -13,25 +13,19 @@ public class Raygast : MonoBehaviour
     {
         if(Physics.Raycast(transform.position, transform.forward, out hit, 5))
         {
-
-
-
             if (hit.transform.gameObject.tag == "Lever")
             {
-                if (hit.distance < 5)
+                ui.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    ui.SetActive(true);
+                   
                 }
-                if (Input.GetKey(KeyCode.E))
-                {
-
-                    Destroy(hit.transform.gameObject);
-                    ui.SetActive(false);
-                }
-
-                
             }
-            
         }
+        else
+        {
+            ui.SetActive(false);
+        }
+        
     }
 }
