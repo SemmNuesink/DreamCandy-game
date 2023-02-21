@@ -57,9 +57,13 @@ public class PlayerScript : MonoBehaviour
             onGround = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed += 5f;
+            speed = 7f;
+        }
+        else
+        {
+            speed = 5f;
         }
        
        
