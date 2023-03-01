@@ -9,33 +9,36 @@ using UnityEngine.UIElements;
 public class TestCamera : MonoBehaviour
 {
     public GameObject objectCameraljdlf;
-    public float x;
+    public float x1;
+    public float x2;
+    public float x3;
     
-    public Vector3 cameraRotation1;
+    public Vector3 cameraRotation;
     public Vector3 thisPos;
+    public Vector3 thisRot;
     
     public float cameraOffset;
     public Vector3 newCameraPos;
     public float cameraSensitivity;
-    public quaternion v3ToQuaternion;
-
-    
+    public quaternion vector3ToQuaternion;
 
 
     // Update is called once per frame
     void Update()
     {
         thisPos = this.transform.position;
+        x1 = Input.GetAxis("Mouse X");
 
-        x += Input.GetAxis("Mouse X") * Time.deltaTime * cameraSensitivity;
-        cameraRotation1 = new Vector3(thisPos.x, thisPos.y + x, thisPos.z);
-        v3ToQuaternion = quaternion.Euler(cameraRotation1);
+        x2 += x1 * cameraSensitivity * Time.deltaTime / 180 * math.PI;
+        
+        newCameraPos = thisPos;
+        newCameraPos.z -= math.cos(x2) * cameraOffset;
+        newCameraPos.y += 1f;
+        newCameraPos.x -= math.sin(x2) * cameraOffset;
 
-        newCameraPos.x = Mathf.Cos(180 - cameraRotation1.y) * cameraOffset;
-        newCameraPos.y = 1f;
-        newCameraPos.z = Mathf.Sin(180 - cameraRotation1.y) * cameraOffset;
+        cameraRotation.y = x1 * cameraSensitivity * Time.deltaTime;
 
-        objectCameraljdlf.transform.rotation = v3ToQuaternion;
+        objectCameraljdlf.transform.Rotate(cameraRotation);
         objectCameraljdlf.transform.position = newCameraPos;
 
 
