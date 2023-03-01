@@ -314,7 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582880488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -397,13 +397,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectCameraljdlf: {fileID: 582880488}
-  x: 0
-  cameraRotation1: {x: 0, y: 0, z: 0}
+  x1: 0
+  x2: 0
+  x3: 0
+  cameraRotation: {x: 0, y: 0, z: 0}
   thisPos: {x: 0, y: 0, z: 0}
+  thisRot: {x: 0, y: 0, z: 0}
   cameraOffset: 2
   newCameraPos: {x: 0, y: 0, z: 0}
-  cameraSensitivity: 1
-  v3ToQuaternion:
+  cameraSensitivity: 10
+  vector3ToQuaternion:
     value:
       x: 0
       y: 0
@@ -488,7 +491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073653215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
