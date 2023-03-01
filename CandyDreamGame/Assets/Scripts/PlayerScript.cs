@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -16,11 +17,12 @@ public class PlayerScript : MonoBehaviour
     public Vector3 jump;
     public bool onGround;
     public Rigidbody rb;
+    public GameObject canvas;
 
 
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0, jumpHeight, 0);
     }
@@ -34,6 +36,8 @@ public class PlayerScript : MonoBehaviour
     {
         onGround = false;
     }
+
+    
 
 
 
@@ -65,6 +69,11 @@ public class PlayerScript : MonoBehaviour
         {
             speed = 5f;
         }
+
+       
+        
+       
+
        
        
 
