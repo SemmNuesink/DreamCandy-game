@@ -8,10 +8,12 @@ public class NextScene : MonoBehaviour
 {
     public GameObject credits;
     public GameObject mainMenu;
+    public GameObject nextScene;
 
     public void NextScenes()
     {
         SceneManager.LoadScene(1);
+        nextScene.SetActive(false);
     }
 
     public void ExitGame()
