@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550718116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.56}
+  m_LocalPosition: {x: 0, y: 0, z: 0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -396,22 +396,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36cc99a45e9ee8458e1b4adee6a6cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectCameraljdlf: {fileID: 582880488}
+  CameraThing: {fileID: 582880488}
+  playerMovementSpeed: 2
+  cameraSensitivity: 10
   x1: 0
   x2: 0
-  x3: 0
+  h: 0
+  v: 0
+  newPlayerPos: {x: 0, y: 0, z: 0}
+  newCameraPos: {x: 0, y: 0, z: 0}
   cameraRotation: {x: 0, y: 0, z: 0}
   thisPos: {x: 0, y: 0, z: 0}
-  thisRot: {x: 0, y: 0, z: 0}
-  cameraOffset: 2
-  newCameraPos: {x: 0, y: 0, z: 0}
-  cameraSensitivity: 10
-  vector3ToQuaternion:
-    value:
-      x: 0
-      y: 0
-      z: 0
-      w: 0
+  cameraOffset: 5
+  neededZoom: 0
+  newCameraZoom: {x: 0, y: 0, z: 0}
 --- !u!65 &1073653217
 BoxCollider:
   m_ObjectHideFlags: 0
