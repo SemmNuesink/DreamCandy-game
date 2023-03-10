@@ -398,9 +398,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraThing: {fileID: 582880488}
   playerMovementSpeed: 2
-  cameraSensitivity: 10
+  cameraSensitivityv: 0.1
+  cameraSensitivityh: 10
   x1: 0
   x2: 0
+  y1: 0
+  y2: 5
   h: 0
   v: 0
   newPlayerPos: {x: 0, y: 0, z: 0}
