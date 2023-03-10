@@ -53,6 +53,9 @@ public class SaveAndLoad : MonoBehaviour
         position = new Vector3(x, y, z);
         player.transform.position = position;
         Debug.Log("Loaded");
+
+
+       
     }
 
 }
