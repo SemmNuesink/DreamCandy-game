@@ -32,7 +32,12 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        onGround = true;
+        if(collision.transform.gameObject.tag == "Ground")
+        {
+            onGround = true;
+        }
+        
+        
     }
 
     private void OnCollisionExit(Collision collision)

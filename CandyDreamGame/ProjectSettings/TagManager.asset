@@ -7,6 +7,12 @@ TagManager:
   - Lever
   - Wekker
   - Chocola
+  - Ground
+  - BuildPlatform
+  - Linkerbel
+  - RechterBel
+  - Hamer
+  - Body
   layers:
   - Default
   - TransparentFX

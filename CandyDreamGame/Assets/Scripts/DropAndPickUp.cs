@@ -21,7 +21,7 @@ public class DropAndPickUp : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if(hit.transform.gameObject.tag == "Wekker")
+                if (!(!(hit.transform.gameObject.tag == "Linkerbel") && !(hit.transform.gameObject.tag == "RechterBel") && !(hit.transform.gameObject.tag == "Body") && !(hit.transform.gameObject.tag == "Hamer")))
                 {
                     objectt = hit.transform.gameObject;
                 }
@@ -34,7 +34,7 @@ public class DropAndPickUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
 
-            if (objectt.tag == "Wekker")
+            if (!(!(objectt.tag == "Linkerbel") && !(objectt.tag == "RechterBel") && !(objectt.tag == "Body") && !(objectt.tag == "Hamer")))
             {
                 if ((inHand == false) && (findObject == true))
                 {
