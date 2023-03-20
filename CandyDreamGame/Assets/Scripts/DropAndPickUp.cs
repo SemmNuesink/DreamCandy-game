@@ -10,6 +10,7 @@ public class DropAndPickUp : MonoBehaviour
     public GameObject objectt;
     public bool findObject;
     public GameObject dropSlot;
+    public GameObject player;
 
 
     private void Update()
@@ -53,6 +54,19 @@ public class DropAndPickUp : MonoBehaviour
         {
             objectt.transform.position = grabSlot.transform.position;
             objectt.transform.rotation = grabSlot.transform.rotation;
+        }
+
+        
+       
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (inHand == true)
+        {
+            if (collision.transform.gameObject.tag == "Chocola")
+            {
+                inHand = false;
+            }
         }
     }
 }

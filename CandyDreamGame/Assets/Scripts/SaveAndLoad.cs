@@ -10,9 +10,20 @@ public class SaveAndLoad : MonoBehaviour
     public float z;
     public GameObject player;
     public Vector3 position;
+    public static SaveAndLoad instance;
 
     public void Update()
     {
+       /*
+        if(instance == null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
+       */
+      
+
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -41,11 +52,14 @@ public class SaveAndLoad : MonoBehaviour
     {
         
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
 
         SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(0.1f);
+
+        player = GameObject.Find("Player");
         
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         x = PlayerPrefs.GetFloat("x");
         y = PlayerPrefs.GetFloat("y");
         z = PlayerPrefs.GetFloat("z");

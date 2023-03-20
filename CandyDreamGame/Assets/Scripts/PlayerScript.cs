@@ -19,6 +19,9 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody rb;
     public GameObject canvas;
 
+    public GameObject targetPoint;
+    public GameObject player;
+
 
     public void Start()
     {
@@ -37,7 +40,7 @@ public class PlayerScript : MonoBehaviour
         onGround = false;
     }
 
-    
+
 
 
 
@@ -70,13 +73,24 @@ public class PlayerScript : MonoBehaviour
             speed = 5f;
         }
 
-       
-        
-       
-
-       
-       
-
 
     }
+    
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.gameObject.tag == "Chocola")
+        {
+            player.transform.position = targetPoint.transform.position;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    
 }
