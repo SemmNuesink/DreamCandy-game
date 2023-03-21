@@ -8,18 +8,33 @@ public class ConvoManager : MonoBehaviour
     public int positionInArray;
     public Conversation convo;
     public RaycastHit hit;
+    public bool candyInHand;
     // Start is called before the first frame update
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            print("hallo");
+            
             if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
             {
-                print("hi");
+                
                 if (hit.collider.gameObject.tag == "MrMellow")
                 {
-                    positionInArray += 1;
+                    if (positionInArray < convo.indexToPickupCandy)
+                    {
+                        positionInArray += 1;
+                    }
+                    else if (positionInArray == convo.indexToPickupCandy)
+                    {
+                        if (candyInHand)
+                        {
+                            positionInArray = convo.indexToPickupCandy + 1;
+                        }
+                    }
+                    else if (positionInArray < convo.indexToStartAlarmQuest)
+                    {
+                        positionInArray += 1;
+                    }
                     print(convo.text[positionInArray]);
                 }
             }

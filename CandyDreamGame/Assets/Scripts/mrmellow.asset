@@ -20,3 +20,5 @@ MonoBehaviour:
   - can you give be some candy?
   - i am very hungry, but i'm too thicc to pick up candy
   - i am very hungry, but i'm too thicc to pick up candy
+  indexToPickupCandy: 5
+  indexToStartAlarmQuest: 20
