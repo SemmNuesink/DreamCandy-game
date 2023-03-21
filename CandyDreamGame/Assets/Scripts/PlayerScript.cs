@@ -22,6 +22,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject targetPoint;
     public GameObject player;
 
+    public GameObject deadUI;
+
 
     public void Start()
     {
@@ -85,8 +87,17 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.transform.gameObject.tag == "Chocola")
         {
-            player.transform.position = targetPoint.transform.position;
+            deadUI.SetActive(true);
+            Time.timeScale = 0;
+
         }
+    }
+
+    public void respawn()
+    {
+        deadUI.SetActive(false);
+        player.transform.position = targetPoint.transform.position;
+        Time.timeScale = 1;
     }
 
 
