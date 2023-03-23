@@ -8,8 +8,10 @@ using UnityEngine;
 public class Conversation : ScriptableObject
 {
     public string[] text;
+    public string[] namesOfItemsToCollect;
     public int indexToPickupCandy;
     public int indexToStartAlarmQuest;
+    public int indexToStartNamingObjectCollected;
 
 
 

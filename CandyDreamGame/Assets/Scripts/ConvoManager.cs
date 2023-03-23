@@ -35,7 +35,14 @@ public class ConvoManager : MonoBehaviour
                     {
                         positionInArray += 1;
                     }
-                    print(convo.text[positionInArray]);
+                    if (positionInArray < convo.indexToStartNamingObjectCollected)
+                    {
+                        print(convo.text[positionInArray]);
+                    }
+                    else
+                    {
+                        print(convo.text[convo.indexToStartNamingObjectCollected] + convo.namesOfItemsToCollect);
+                    }
                 }
             }
         }
