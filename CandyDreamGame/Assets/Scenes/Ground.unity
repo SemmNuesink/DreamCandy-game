@@ -341,6 +341,7 @@ MonoBehaviour:
   objectt: {fileID: 0}
   findObject: 0
   dropSlot: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1756407026
 GameObject:
   m_ObjectHideFlags: 0
