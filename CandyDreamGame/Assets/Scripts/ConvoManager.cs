@@ -10,6 +10,13 @@ public class ConvoManager : MonoBehaviour
     public RaycastHit hit;
     public bool candyInHand;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        
+    }
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

@@ -13,12 +13,20 @@ MonoBehaviour:
   m_Name: mrmellow
   m_EditorClassIdentifier: 
   text:
-  - Hello
-  - my name is mrmellow
-  - can you help me with something?
-  - i am very hungry, but i'm too thicc to pick up candy
-  - can you give be some candy?
-  - i am very hungry, but i'm too thicc to pick up candy
-  - i am very hungry, but i'm too thicc to pick up candy
+  - Hello, my name is Mr.Mallow.
+  - I am the mayor of Candyland.
+  - There have been a lot of children in dreamworld lately, tearing everything apart.
+  - Now a girl called Maya is running around in Candyland eating all of the candy.
+  - The citizens of Candyland are scared and won't leave their homes, until Maya
+    is woken up
+  - We used to have an alarm clock to wake up children visiting this place, but it
+    broke and the pieces got lost.
+  - I am trying to gather food for the citizens of Candyland, but i'm scared to leave
+    the city, as Maya might be out there
+  - Could you find us some candy? There should be plenty out there as we haven't
+    been able to collect them for days.
+  - When you find candy press "E" to pick it up.
+  namesOfItemsToCollect: []
   indexToPickupCandy: 5
   indexToStartAlarmQuest: 20
+  indexToStartNamingObjectCollected: 0
