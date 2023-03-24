@@ -33,20 +33,22 @@ public class DropAndPickUp : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-
-            if (!(!(objectt.tag == "Linkerbel") && !(objectt.tag == "RechterBel") && !(objectt.tag == "Body") && !(objectt.tag == "Hamer")))
+            if (objectt)
             {
-                if ((inHand == false) && (findObject == true))
+                if (!(!(objectt.tag == "Linkerbel") && !(objectt.tag == "RechterBel") && !(objectt.tag == "Body") && !(objectt.tag == "Hamer")))
                 {
-                    inHand = true;
-                }
-                else
-                {
-                    if (inHand == true)
+                    if ((inHand == false) && (findObject == true))
                     {
-                        objectt.transform.position = dropSlot.transform.position;
+                        inHand = true;
                     }
-                    inHand = false;
+                    else
+                    {
+                        if (inHand == true)
+                        {
+                            objectt.transform.position = dropSlot.transform.position;
+                        }
+                        inHand = false;
+                    }
                 }
             }
         }

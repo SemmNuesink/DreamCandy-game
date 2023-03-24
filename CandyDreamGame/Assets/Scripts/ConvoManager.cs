@@ -9,6 +9,12 @@ public class ConvoManager : MonoBehaviour
     public Conversation convo;
     public RaycastHit hit;
     public bool candyInHand;
+    public string textToPrint;
+    public PlaceFullWekker wekkerScript;
+    public string onderdelenOpgepakt;
+    public string onderdelenOpTePakken;
+    public bool[] PickedObjects = new bool[5];
+    
     // Start is called before the first frame update
 
     private void Start()
@@ -27,6 +33,12 @@ public class ConvoManager : MonoBehaviour
                 
                 if (hit.collider.gameObject.tag == "MrMellow")
                 {
+                    PickedObjects[0] = wekkerScript.linker;
+                    PickedObjects[1] = wekkerScript.rechter;
+                    PickedObjects[2] = wekkerScript.hamer;
+                    PickedObjects[3] = wekkerScript.wekker;
+
+
                     if (positionInArray < convo.indexToPickupCandy)
                     {
                         positionInArray += 1;
@@ -42,14 +54,35 @@ public class ConvoManager : MonoBehaviour
                     {
                         positionInArray += 1;
                     }
+
+
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (PickedObjects[i] == true)
+                        {
+                            onderdelenOpgepakt += convo.namesOfItemsToCollect[i];
+                        }
+                        else
+                        {
+                            onderdelenOpTePakken += convo.namesOfItemsToCollect[i];
+                        }
+                    }
+
+
+
+
+
                     if (positionInArray < convo.indexToStartNamingObjectCollected)
                     {
-                        print(convo.text[positionInArray]);
+                        textToPrint = convo.text[positionInArray];
                     }
                     else
                     {
-                        print(convo.text[convo.indexToStartNamingObjectCollected] + convo.namesOfItemsToCollect);
+                        textToPrint = convo.text[positionInArray] + "je hebt gepakt:" + onderdelenOpgepakt + "je moet nog pakken:" +onderdelenOpTePakken;
                     }
+
+                    print(textToPrint);
                 }
             }
         }
