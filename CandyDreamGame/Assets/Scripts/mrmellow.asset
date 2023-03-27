@@ -31,7 +31,11 @@ MonoBehaviour:
   - They say that parts have been seen in the Marshmallow maze, the chocolate castle,
     lollypop island and the cotton candy forest.
   - 
-  namesOfItemsToCollect: []
+  namesOfItemsToCollect:
+  - linkerbel
+  - rechterbel
+  - hamer
+  - klok
   indexToPickupCandy: 9
   indexToStartAlarmQuest: 20
-  indexToStartNamingObjectCollected: 0
+  indexToStartNamingObjectCollected: 20

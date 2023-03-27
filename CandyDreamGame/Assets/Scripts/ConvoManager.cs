@@ -13,32 +13,55 @@ public class ConvoManager : MonoBehaviour
     public PlaceFullWekker wekkerScript;
     public string onderdelenOpgepakt;
     public string onderdelenOpTePakken;
-    public bool[] PickedObjects = new bool[5];
+    public bool[] PickedObjects = new bool[3];
+    public int partsCollected;
+    public bool textIsDynamic;
     
-    // Start is called before the first frame update
-
-    private void Start()
-    {
-        
-    }
-
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
             if (Physics.Raycast(transform.position, transform.forward, out hit, 5))
             {
-                
                 if (hit.collider.gameObject.tag == "MrMellow")
                 {
+                    //set bools in array
                     PickedObjects[0] = wekkerScript.linker;
                     PickedObjects[1] = wekkerScript.rechter;
                     PickedObjects[2] = wekkerScript.hamer;
-                    PickedObjects[3] = wekkerScript.wekker;
+                    PickedObjects[3] = wekkerScript.body;
 
 
+                    //voegt strings samen van opgepakte objecten
+                    partsCollected = 0;
+                    onderdelenOpgepakt = "";
+                    onderdelenOpTePakken = "";
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (PickedObjects[i] == true)
+                        {
+                            if (partsCollected > 0)
+                            {
+                                onderdelenOpgepakt += "the, ";
+                            }
+                            onderdelenOpgepakt += convo.namesOfItemsToCollect[i];
+                            partsCollected++;
+                        }
+                        else
+                        {
+                            if (partsCollected > 0)
+                            {
+                                onderdelenOpgepakt += "the, ";
+                            }
+                            onderdelenOpTePakken += convo.namesOfItemsToCollect[i];
+                        }
+                    }
+
+
+
+                    //houd bij waar je bent in het gesprek
+                    textIsDynamic= false;
                     if (positionInArray < convo.indexToPickupCandy)
                     {
                         positionInArray += 1;
@@ -50,46 +73,45 @@ public class ConvoManager : MonoBehaviour
                             positionInArray = convo.indexToPickupCandy + 1;
                         }
                     }
-                    else if (positionInArray < convo.indexToStartAlarmQuest)
+                    else if (positionInArray < convo.indexToStartNamingObjectCollected)
+                    {
+                        positionInArray += 1;
+                    }
+                    else if (positionInArray < convo.indexWhenAllObjectsCollected)
+                    {
+                        for (int i = 1; i < 5; i++)
+                        {
+                            if (partsCollected == i)
+                            {
+                                positionInArray = convo.indexToStartNamingObjectCollected + i;
+                                if (i < 4)
+                                {
+                                    textIsDynamic = true;
+                                }
+                            }
+                        }
+                    }
+                    else if (positionInArray < convo.text.Length - 1)
                     {
                         positionInArray += 1;
                     }
 
 
-
-                    for (int i = 0; i < 3; i++)
-                    {
-                        if (PickedObjects[i] == true)
-                        {
-                            onderdelenOpgepakt += convo.namesOfItemsToCollect[i];
-                        }
-                        else
-                        {
-                            onderdelenOpTePakken += convo.namesOfItemsToCollect[i];
-                        }
-                    }
-
-
-
-
-
-                    if (positionInArray < convo.indexToStartNamingObjectCollected)
+                    //bepaalt welk text format gebruikt moet worden
+                    if (!textIsDynamic)
                     {
                         textToPrint = convo.text[positionInArray];
                     }
                     else
                     {
-                        textToPrint = convo.text[positionInArray] + "je hebt gepakt:" + onderdelenOpgepakt + "je moet nog pakken:" +onderdelenOpTePakken;
+                        textToPrint = convo.text[positionInArray] + onderdelenOpgepakt + "you still need to find the " +onderdelenOpTePakken;
                     }
 
+                    //print de text
                     print(textToPrint);
                 }
             }
         }
-
-
-
-
 
         
     }

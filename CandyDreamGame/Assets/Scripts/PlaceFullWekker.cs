@@ -9,6 +9,7 @@ public class PlaceFullWekker : MonoBehaviour
     public bool rechter = false;
     public bool hamer = false;
     public bool body = false;
+    public bool wekkerAf = false;
     public GameObject wekker;
     public GameObject fullWekker;
     public Transform podiumPlace;
@@ -36,15 +37,14 @@ public class PlaceFullWekker : MonoBehaviour
         {
             body = true;
         }
-
-        if(linker == true && rechter == true && hamer == true && body == true)
+        if (wekkerAf == false)
         {
-            Destroy(wekker);
-            Instantiate(fullWekker, new Vector3(0, 1, 0) + podiumPlace.transform.position, Quaternion.identity);
-            body = false;
-            linker = false;
-            rechter = false;
-            hamer = false;
+            if (linker == true && rechter == true && hamer == true && body == true)
+            {
+                Destroy(wekker);
+                Instantiate(fullWekker, new Vector3(0, 1, 0) + podiumPlace.transform.position, Quaternion.identity);
+                wekkerAf = true;
+            }
         }
 
     }
