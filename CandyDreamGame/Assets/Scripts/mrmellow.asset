@@ -26,7 +26,12 @@ MonoBehaviour:
   - Could you find us some candy? There should be plenty out there as we haven't
     been able to collect them for days.
   - When you find candy press "E" to pick it up.
+  - Ah thank you so much this should be enough to feed the people of candyland.
+  - now to deal with Maya you should look for parts of the alarm to wake her up.
+  - They say that parts have been seen in the Marshmallow maze, the chocolate castle,
+    lollypop island and the cotton candy forest.
+  - 
   namesOfItemsToCollect: []
-  indexToPickupCandy: 5
+  indexToPickupCandy: 9
   indexToStartAlarmQuest: 20
   indexToStartNamingObjectCollected: 0
