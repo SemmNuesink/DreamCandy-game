@@ -13,29 +13,35 @@ MonoBehaviour:
   m_Name: mrmellow
   m_EditorClassIdentifier: 
   text:
+  - 
   - Hello, my name is Mr.Mallow.
   - I am the mayor of Candyland.
   - There have been a lot of children in dreamworld lately, tearing everything apart.
   - Now a girl called Maya is running around in Candyland eating all of the candy.
-  - The citizens of Candyland are scared and won't leave their homes, until Maya
-    is woken up
+  - The citizens of Candyland are scared and won't leave their homes until Maya is
+    woken up
   - We used to have an alarm clock to wake up children visiting this place, but it
     broke and the pieces got lost.
-  - I am trying to gather food for the citizens of Candyland, but i'm scared to leave
+  - I am trying to gather food for the citizens of Candyland, but I'm scared to leave
     the city, as Maya might be out there
   - Could you find us some candy? There should be plenty out there as we haven't
     been able to collect them for days.
   - When you find candy press "E" to pick it up.
   - Ah thank you so much this should be enough to feed the people of candyland.
-  - now to deal with Maya you should look for parts of the alarm to wake her up.
+  - Now to deal with Maya you should look for parts of the alarm to wake her up.
   - They say that parts have been seen in the Marshmallow maze, the chocolate castle,
     lollypop island and the cotton candy forest.
-  - 
+  - 'Ah you found the '
+  - 'Ah you found the '
+  - 'Ah you found the '
+  - Ah you found all the parts and built the alarmclock
+  - Maya has been woken up! Candy land is saved!
+  - Thank you for your help and for playing!
   namesOfItemsToCollect:
-  - linkerbel
-  - rechterbel
-  - hamer
-  - klok
+  - 'left bell '
+  - 'right bell '
+  - 'hammer '
+  - 'clock '
   indexToPickupCandy: 9
-  indexToStartAlarmQuest: 20
-  indexToStartNamingObjectCollected: 20
+  indexToStartNamingObjectCollected: 12
+  indexWhenAllObjectsCollected: 16

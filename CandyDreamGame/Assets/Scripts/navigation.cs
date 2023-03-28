@@ -22,10 +22,7 @@ public class navigation : MonoBehaviour
         {
             freeRoam = true;
         }
-        else if (Vector3.Distance(target.position, this.transform.position) < 5f)
-        {
-            freeRoam = false;
-        }
+        
 
         if (Vector3.Distance(roamLocation, this.transform.position) <5)
         {
@@ -44,17 +41,18 @@ public class navigation : MonoBehaviour
         }
 
         
-        if (!freeRoam)
-        {
-            agent.SetDestination(target.position);
-        }
-        else
+        if (freeRoam)
         {
             agent.SetDestination(roamLocation);
         }
-
-        
+        else
+        {
+            agent.SetDestination(target.position);
+        }
     }
+
+
+
 
 
 
