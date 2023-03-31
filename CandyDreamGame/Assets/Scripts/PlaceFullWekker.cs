@@ -13,11 +13,17 @@ public class PlaceFullWekker : MonoBehaviour
     public GameObject wekker;
     public GameObject fullWekker;
     public Transform podiumPlace;
+    public SaveAndLoad script;
     private void OnCollisionStay(Collision collision)
     {
-        
-        
-        if(collision.gameObject.tag == "Linkerbel")
+
+       
+
+
+
+
+
+        if (collision.gameObject.tag == "Linkerbel")
         {
             linker = true;
             

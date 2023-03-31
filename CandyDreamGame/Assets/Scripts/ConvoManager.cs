@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class ConvoManager : MonoBehaviour
     public bool[] PickedObjects = new bool[3];
     public int partsCollected;
     public bool textIsDynamic;
+    public TMP_Text display;
     
 
     void Update()
@@ -109,6 +111,7 @@ public class ConvoManager : MonoBehaviour
 
                     //print de text
                     print(textToPrint);
+                    display.text = textToPrint;
                 }
             }
         }
