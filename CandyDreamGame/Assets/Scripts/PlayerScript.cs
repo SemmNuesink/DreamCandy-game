@@ -54,6 +54,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
         x = Input.GetAxis("Mouse X");
