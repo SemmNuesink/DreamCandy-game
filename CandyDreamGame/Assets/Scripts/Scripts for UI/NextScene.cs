@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class NextScene : MonoBehaviour
 
@@ -9,6 +11,8 @@ public class NextScene : MonoBehaviour
     public GameObject credits;
     public GameObject mainMenu;
     public GameObject nextScene;
+    public TMP_Text continueText;
+    public SaveAndLoad SaveAndLoad;
 
     public void NextScenes()
     {
@@ -31,6 +35,4 @@ public class NextScene : MonoBehaviour
         credits.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
     }
-
-
 }
