@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     {
         canvas.gameObject.SetActive(false);
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
         {
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
         }
 
 
