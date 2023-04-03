@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0, jumpHeight, 0);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnCollisionStay(Collision collision)
