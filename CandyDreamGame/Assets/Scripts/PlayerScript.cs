@@ -31,7 +31,6 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0, jumpHeight, 0);
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
     private void OnCollisionStay(Collision collision)
@@ -91,7 +90,7 @@ public class PlayerScript : MonoBehaviour
         {
             deadUI.SetActive(true);
             Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
+
         }
     }
 
@@ -100,7 +99,6 @@ public class PlayerScript : MonoBehaviour
         deadUI.SetActive(false);
         player.transform.position = targetPoint.transform.position;
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
