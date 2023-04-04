@@ -9,12 +9,12 @@ public class ConvoManager : MonoBehaviour
     public int positionInArray;
     public Conversation convo;
     public RaycastHit hit;
-    public bool candyInHand;
+    public bool candyCollected;
     public string textToPrint;
     public PlaceFullWekker wekkerScript;
     public string onderdelenOpgepakt;
     public string onderdelenOpTePakken;
-    public bool[] PickedObjects = new bool[3];
+    public bool[] pickedObjects = new bool[3];
     public int partsCollected;
     public bool textIsDynamic;
     public TMP_Text display;
@@ -29,10 +29,12 @@ public class ConvoManager : MonoBehaviour
                 if (hit.collider.gameObject.tag == "MrMellow")
                 {
                     //set bools in array
-                    PickedObjects[0] = wekkerScript.linker;
-                    PickedObjects[1] = wekkerScript.rechter;
-                    PickedObjects[2] = wekkerScript.hamer;
-                    PickedObjects[3] = wekkerScript.body;
+                    pickedObjects[0] = wekkerScript.linker;
+                    pickedObjects[1] = wekkerScript.rechter;
+                    pickedObjects[2] = wekkerScript.hamer;
+                    pickedObjects[3] = wekkerScript.body;
+                    candyCollected = wekkerScript.candy;
+                    
 
 
                     //voegt strings samen van opgepakte objecten
@@ -41,7 +43,7 @@ public class ConvoManager : MonoBehaviour
                     onderdelenOpTePakken = "";
                     for (int i = 0; i < 4; i++)
                     {
-                        if (PickedObjects[i] == true)
+                        if (pickedObjects[i] == true)
                         {
                             if (partsCollected > 0)
                             {
@@ -70,7 +72,7 @@ public class ConvoManager : MonoBehaviour
                     }
                     else if (positionInArray == convo.indexToPickupCandy)
                     {
-                        if (candyInHand)
+                        if (candyCollected)
                         {
                             positionInArray = convo.indexToPickupCandy + 1;
                         }
