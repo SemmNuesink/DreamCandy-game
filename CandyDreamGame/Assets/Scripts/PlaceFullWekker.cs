@@ -10,6 +10,7 @@ public class PlaceFullWekker : MonoBehaviour
     public bool hamer = false;
     public bool body = false;
     public bool wekkerAf = false;
+    public bool candy = false;
     public GameObject wekker;
     public GameObject fullWekker;
     public Transform podiumPlace;
@@ -17,8 +18,12 @@ public class PlaceFullWekker : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
 
-       
 
+        if (collision.gameObject.tag == "Candy")
+        {
+            candy = true;
+
+        }
 
 
 
@@ -26,19 +31,19 @@ public class PlaceFullWekker : MonoBehaviour
         if (collision.gameObject.tag == "Linkerbel")
         {
             linker = true;
-            
+
         }
 
         if (collision.gameObject.tag == "RechterBel")
         {
             rechter = true;
         }
-       
+
         if (collision.gameObject.tag == "Hamer")
         {
             hamer = true;
         }
-       
+
         if (collision.gameObject.tag == "Body")
         {
             body = true;
