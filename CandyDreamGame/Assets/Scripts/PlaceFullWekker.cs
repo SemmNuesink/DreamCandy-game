@@ -53,7 +53,7 @@ public class PlaceFullWekker : MonoBehaviour
             if (linker == true && rechter == true && hamer == true && body == true)
             {
                 Destroy(wekker);
-                Instantiate(fullWekker, new Vector3(0, 1, 0) + podiumPlace.transform.position, Quaternion.identity);
+                Instantiate(fullWekker, new Vector3(0, .5f, 0) + podiumPlace.transform.position, Quaternion.identity);
                 wekkerAf = true;
 
             }
