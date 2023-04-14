@@ -46,6 +46,7 @@ public class DropAndPickUp : MonoBehaviour
                         if (inHand == true)
                         {
                             objectt.transform.position = dropSlot.transform.position;
+                            objectt = null;
                         }
                         inHand = false;
                     }
