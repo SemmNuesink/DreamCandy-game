@@ -20,14 +20,11 @@ public class SaveAndLoad : MonoBehaviour
     public GameObject bodyWekker;
     public string[] names = new string[18];
     public GameObject maya;
-    
-
 
     public void Update()
     {
         DontDestroyOnLoad(this.gameObject);
     }
-
 
     public void Save()
     {
@@ -55,30 +52,26 @@ public class SaveAndLoad : MonoBehaviour
         objectPos[16] = player.transform.position.y;
         objectPos[17] = player.transform.position.z;
 
-
         for (int i = 0; i < 18; i++)
         {
             PlayerPrefs.SetFloat(names[i], objectPos[i]);
         }
-
-       
+      
         Debug.Log("Saved");
         saved.text = "Saved";
     }
     public void Load()
-    {
-        
-        StartCoroutine(LoadPosition());
-        
+    {      
+        StartCoroutine(LoadPosition());        
     }
 
     IEnumerator LoadPosition()
     {
         
-
         yield return new WaitForSeconds(0.1f);
-
+        
         SceneManager.LoadScene(1);
+        
         yield return new WaitForSeconds(0.1f);
 
         player = GameObject.Find("Player");
@@ -87,17 +80,13 @@ public class SaveAndLoad : MonoBehaviour
         hamer = GameObject.Find("HamerWekker");
         bodyWekker = GameObject.Find("WekkerKlok");
         maya = GameObject.Find("Maya");
-
-
+        
         yield return new WaitForSeconds(0.1f);
        
-        Debug.Log("Loaded");
-
         for(int i = 0; i < 18; i++)
         {
             objectPos[i] = PlayerPrefs.GetFloat(names[i]);
         }
-
 
         position = new Vector3(objectPos[0], objectPos[1], objectPos[2]);
         linkerBel.transform.position = position;
@@ -112,8 +101,7 @@ public class SaveAndLoad : MonoBehaviour
         position = new Vector3(objectPos[15], objectPos[16], objectPos[17]);
         player.transform.position = position;
 
-
-
+        Debug.Log("Loaded");
 
 
 

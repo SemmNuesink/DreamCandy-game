@@ -86,11 +86,24 @@ public class PlayerScript : MonoBehaviour
     
     public void OnCollisionEnter(Collision collision)
     {
+        if(collision.transform.tag == "Maya")
+        {
+            deadUI.SetActive(true);
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            player.transform.position = targetPoint.transform.position;
+        }
+        
+        
+        
+        
         if (collision.transform.gameObject.tag == "Chocola")
         {
             deadUI.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+            player.transform.position = targetPoint.transform.position;
+
         }
     }
 
@@ -105,10 +118,11 @@ public class PlayerScript : MonoBehaviour
 
 
 
-
-
-
-
-
     
+   
+
+
+
+
+
 }
