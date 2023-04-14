@@ -19,7 +19,7 @@ public class PlaceFullWekker : MonoBehaviour
     {
 
 
-        if (collision.gameObject.tag == "Candy")
+        if (collision.gameObject.tag == "Snoepje")
         {
             candy = true;
 

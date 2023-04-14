@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9fac1e0696fc89e4e8e105cf5327ab25,
         type: 3}
       propertyPath: m_Name
-      value: kers snoepje
+      value: kers snoepje Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
